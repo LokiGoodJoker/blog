@@ -1,0 +1,15 @@
+
+{% block content %}
+    <p>{{ post.datetime }}</p>
+    <h2>Title: {{ post.title }}</h2>
+	<p class="meta">{{ object.created }} Tags: {{ object.tags.all|join:", " }}
+	</p>
+    <p>Content:
+	{{ post.content }}</p>
+	<div style='clear:left'>&nbsp;</div>
+  <small onClick='onSmall({{ post.id }})' style='text-aling: right;'>Комментарии: {{ comment_count }}</small> 
+  <div id='comment{{ post.id }}' style='display: none;'>
+   
+  </div>
+	
+{% endblock %}
